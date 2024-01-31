@@ -7,10 +7,11 @@ permissions:
   contents: write
   pull-requests: write
 
-name: release-please
+name: Release
 
 jobs:
-  release-please:
+  Release:
+    if: "contains(github.event.head_commit.message, 'build')"
     runs-on: ubuntu-latest
     steps:
       - name: Check out git repository
