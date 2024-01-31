@@ -25,7 +25,7 @@ jobs:
       - name: Get version
         run: |
           python -m pip install toml
-          echo PACKAGE_VERSION=0.0.2 >> $GITHUB_ENV
+          echo PACKAGE_VERSION=`python -c 'import toml; print(toml.load("./pyproject.toml")["tool"]["poetry"]["version"])'` >> $GITHUB_ENV
       
       - name: Create git tag
         uses: pkgdeps/git-tag-action@v2
