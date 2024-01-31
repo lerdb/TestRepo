@@ -15,4 +15,6 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: "v1"
           files: Release.txt
+          token: ${{ github.token }}
